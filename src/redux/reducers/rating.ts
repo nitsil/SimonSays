@@ -11,7 +11,7 @@ interface RatingState {
 }
 
 const initialState: RatingState = {
-  list: [],
+  list: [{name: 'StartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStart', value: 5}, {name: 'Mid', value: 3}, {name: 'end', value: 1}],
 };
 
 const ratingSlice = createSlice({
