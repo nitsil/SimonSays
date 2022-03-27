@@ -2,7 +2,7 @@ import type {StackScreenProps} from '@react-navigation/stack';
 
 export type RootStackParamList = {
   Home: undefined;
-  Ratings: {withNewName?: boolean};
+  Rating: {withNewName?: boolean};
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
