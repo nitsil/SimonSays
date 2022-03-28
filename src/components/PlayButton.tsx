@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import {useAppSelector} from '../redux/hooks';
+import {playSound} from '../resources/sounds/sound';
 
 interface PlayButtonProps {
   index: number;
@@ -26,6 +27,7 @@ export const PlayButton = React.forwardRef<IPlayButton, PlayButtonProps>(
     useEffect(() => timeoutRef.current && clearTimeout(timeoutRef.current), []);
 
     const onButtonPress = useCallback(() => {
+      playSound(index);
       setOpacity(0.3);
       timeoutRef.current = setTimeout(() => {
         setOpacity(1);
