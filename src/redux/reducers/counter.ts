@@ -3,10 +3,12 @@ import {RootState} from '../store';
 
 interface CounterState {
   value: number;
+  disabledButtons: boolean;
 }
 
 const initialState: CounterState = {
   value: 0,
+  disabledButtons: false,
 };
 
 const counterSlice = createSlice({
@@ -19,12 +21,12 @@ const counterSlice = createSlice({
     clear: state => {
       state.value = 0;
     },
+    setDisabledButtons: (state, {payload}: PayloadAction<boolean>) => {
+      state.disabledButtons = payload;
+    },
   },
 });
 
-// export const {increment, decrement, incrementByAmount} = counterSlice.actions;
-
-// // Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.counter.value;
+export const {increment, clear, setDisabledButtons} = counterSlice.actions;
 
 export default counterSlice.reducer;

@@ -11,7 +11,14 @@ interface RatingState {
 }
 
 const initialState: RatingState = {
-  list: [{name: 'StartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStart', value: 5}, {name: 'Mid', value: 3}, {name: 'end', value: 1}],
+  list: [
+    {
+      name: 'StartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStart',
+      value: 5,
+    },
+    {name: 'Mid', value: 3},
+    {name: 'end', value: 1},
+  ],
 };
 
 const ratingSlice = createSlice({
@@ -35,9 +42,6 @@ const ratingSlice = createSlice({
   },
 });
 
-// export const {increment, decrement, incrementByAmount} = counterSlice.actions;
-
-// // Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.counter.value;
+export const {addResult} = ratingSlice.actions;
 
 export default ratingSlice.reducer;

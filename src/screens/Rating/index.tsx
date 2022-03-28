@@ -21,7 +21,7 @@ const Rating = ({navigation}: RatingProps) => {
   return (
     <RatingContainer>
       {ratingList.map((item, index) => (
-        <RatingRow>
+        <RatingRow key={`${index}-rating`}>
           <RatingNameContainer>
             <RatingNameText>{`${index + 1}. ${item.name}`}</RatingNameText>
           </RatingNameContainer>

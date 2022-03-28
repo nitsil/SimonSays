@@ -6,7 +6,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
 import {ThemeProvider} from 'styled-components';
 import Home from './screens/Home';
-import Rating from './modals/Rating';
+import Rating from './screens/Rating';
 import {theme} from './theme';
 import {RootStackParamList} from './types/navigation';
 import {PersistGate} from 'redux-persist/integration/react';
