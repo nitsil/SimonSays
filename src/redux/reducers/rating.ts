@@ -11,22 +11,15 @@ interface RatingState {
 }
 
 const initialState: RatingState = {
-  list: [
-    {
-      name: 'StartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStartStart',
-      value: 5,
-    },
-    {name: 'Mid', value: 3},
-    {name: 'end', value: 1},
-  ],
+  list: [],
 };
 
 const ratingSlice = createSlice({
   name: 'rating',
   initialState,
   reducers: {
-    addResult: ({list}: RatingState, {payload}: PayloadAction<IResult>) => {
-      let listCopy = [...list];
+    addResult: (state: RatingState, {payload}: PayloadAction<IResult>) => {
+      let listCopy = [...state.list];
       listCopy = [...listCopy, payload];
 
       listCopy.sort((a: IResult, b: IResult) => {
@@ -37,7 +30,7 @@ const ratingSlice = createSlice({
 
       listCopy.length > 10 && listCopy.pop();
 
-      list = [...listCopy];
+      state.list = [...listCopy];
     },
   },
 });

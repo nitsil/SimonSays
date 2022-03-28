@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {TouchableOpacityProps} from 'react-native';
 import styled from 'styled-components/native';
 
 const Text = styled.Text`

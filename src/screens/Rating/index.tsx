@@ -1,5 +1,6 @@
 import React from 'react';
-import {useAppSelector} from '../../redux/hooks';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
+import {setRestart} from '../../redux/reducers/counter';
 import {RatingProps} from '../../types/navigation';
 import {
   RatingContainer,
@@ -14,7 +15,9 @@ import {
 
 const Rating = ({navigation}: RatingProps) => {
   const ratingList = useAppSelector(state => state.rating.list);
+  const dispatch = useAppDispatch();
   const onRestartPress = () => {
+    dispatch(setRestart(true));
     navigation.goBack();
   };
 

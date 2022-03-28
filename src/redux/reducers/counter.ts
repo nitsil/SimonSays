@@ -4,11 +4,13 @@ import {RootState} from '../store';
 interface CounterState {
   value: number;
   disabledButtons: boolean;
+  restart: boolean;
 }
 
 const initialState: CounterState = {
   value: 0,
   disabledButtons: false,
+  restart: false,
 };
 
 const counterSlice = createSlice({
@@ -24,9 +26,12 @@ const counterSlice = createSlice({
     setDisabledButtons: (state, {payload}: PayloadAction<boolean>) => {
       state.disabledButtons = payload;
     },
+    setRestart: (state, {payload}: PayloadAction<boolean>) => {
+      state.restart = payload;
+    },
   },
 });
 
-export const {increment, clear, setDisabledButtons} = counterSlice.actions;
+export const {increment, clear, setDisabledButtons, setRestart} = counterSlice.actions;
 
 export default counterSlice.reducer;
